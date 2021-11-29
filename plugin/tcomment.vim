@@ -36,7 +36,8 @@ endif
 
 if !exists("g:tcomment_opleader1")
     " See |tcomment-operator|.
-    let g:tcomment_opleader1 = 'gc' "{{{2
+    " let g:tcomment_opleader1 = 'gc' "{{{2
+    let g:tcomment_opleader1 = ',j' "{{{2
 endif
 
 if !exists("g:tcomment_mapleader_uncomment_anyway")
@@ -257,9 +258,11 @@ if g:tcomment_maps
             exec 'nmap <silent> '. g:tcomment_opleader1 . s:i .'c <Plug>TComment_gc'.s:i.'c'
         endfor
         unlet s:i
-        exec 'nmap <silent> '. g:tcomment_opleader1 .'c <Plug>TComment_gcc'
+        " exec 'nmap <silent> '. g:tcomment_opleader1 .'c <Plug>TComment_gcc'
+        exec 'nmap <silent> '. g:tcomment_opleader1 .'j <Plug>TComment_gcc'
         exec 'nmap <silent> '. g:tcomment_opleader1 .'b <Plug>TComment_gcb'
-        exec 'xmap '. g:tcomment_opleader1 .' <Plug>TComment_gc'
+        " exec 'xmap '. g:tcomment_opleader1 .' <Plug>TComment_gc'
+        exec 'xmap '. g:tcomment_opleader1 .'j <Plug>TComment_gc'
     endif
    if g:tcomment_mapleader_uncomment_anyway != ''
         exec 'nmap <silent> '. g:tcomment_mapleader_uncomment_anyway .' <Plug>TComment_Uncomment'
@@ -269,7 +272,8 @@ if g:tcomment_maps
     endif
    if g:tcomment_mapleader_comment_anyway != ''
         exec 'nmap <silent> '. g:tcomment_mapleader_comment_anyway .' <Plug>TComment_Comment'
-        exec 'nmap <silent> '. g:tcomment_mapleader_comment_anyway .'c <Plug>TComment_Commentc'
+        " exec 'nmap <silent> '. g:tcomment_mapleader_comment_anyway .'c <Plug>TComment_Commentc'
+        exec 'nmap <silent> '. g:tcomment_mapleader_comment_anyway .'j <Plug>TComment_Commentc'
         exec 'nmap <silent> '. g:tcomment_mapleader_comment_anyway .'b <Plug>TComment_Commentb'
         exec 'xmap '. g:tcomment_mapleader_comment_anyway .' <Plug>TComment_Comment'
     endif
